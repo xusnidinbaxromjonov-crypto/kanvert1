@@ -227,7 +227,8 @@ body {
 @media (max-width: 600px) {
     .letter-top { font-size: 20px; margin-bottom: 12px; }
     .letter-body { font-size: 10.5px; margin-bottom: 15px; line-height: 1.45; }
-    .letter-content { padding: 25px 15px 130px 15px; }
+    .letter-content { padding: 25px 15px 80px 15px; }
+    .letter { min-height: 400px; }
 }
 
 .btn-reset {
@@ -508,11 +509,21 @@ let isOpen = false;
 let tl = gsap.timeline({ paused: true });
 
 const isMobile = window.innerWidth < 600;
-const letterHeight = document.querySelector('.letter').getBoundingClientRect().height;
-const scaleVal = isMobile ? 0.95 : 1.1;
+const letterEl = document.querySelector('.letter');
+const letterHeight = letterEl.getBoundingClientRect().height;
+const envelopeHeight = isMobile ? 210 : 260;
+
+const targetHeight = window.innerHeight * 0.85;
+const heightScale = targetHeight / letterHeight;
+let scaleVal = isMobile ? 0.95 : 1.1;
+if (heightScale < scaleVal) {
+    scaleVal = heightScale;
+}
+
 const safeBottom = isMobile ? 120 : 160;
 const letterTranslateY = safeBottom - letterHeight; 
-const yVal = (letterHeight / 2) - safeBottom + (isMobile ? 10 : 30);
+const letterCenterOffset = -(envelopeHeight / 2) + 10 + (letterHeight / 2) + letterTranslateY;
+const yVal = -letterCenterOffset * scaleVal;
 
 tl.to(introContainer, { opacity: 0, duration: 0.8, ease: "power2.inOut" })
   .set(introContainer, { pointerEvents: "none" })
