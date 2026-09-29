@@ -173,10 +173,24 @@ body {
     left: 15px;
     width: calc(100% - 30px);
     min-height: 600px;
+    max-height: 70vh;
+    overflow-y: auto;
+    overflow-x: hidden;
     background: #fdfcf9;
     border-radius: 2px;
     box-shadow: 0 0 20px rgba(0,0,0,0.4), inset 0 0 60px rgba(230,220,200,0.3);
     background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+}
+
+.letter::-webkit-scrollbar {
+    width: 6px;
+}
+.letter::-webkit-scrollbar-track {
+    background: transparent;
+}
+.letter::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.15);
+    border-radius: 10px;
 }
 
 .letter-content {
@@ -409,7 +423,7 @@ body {
     <div class="scene">
         
         <div class="intro-container">
-            <h1 class="intro-text">Senga gapim bor kanvertni och</h1>
+            <h1 class="intro-text">Sanga gapim bor kanvertni och</h1>
             <button class="btn-open">Ochish</button>
         </div>
 
@@ -420,21 +434,31 @@ body {
                     <div class="letter">
                         <div class="letter-content">
                             <div class="letter-top">
-                                "Bilasanmi..."
+                                "Senga bir gapni..."
                             </div>
                             <div class="letter-body">
-                                <p>Ba'zan inson hayotida shunday bir odam paydo bo'ladiki, u kelganidan keyin oddiy kunlar ham boshqacha tuyula boshlaydi.</p>
-                                <p>Men ham qachondir seni shunchaki tanigan inson sifatida ko'rardim. Keyin esa sekin-sekin seni o'ylaydigan, sening kulgingdan xursand bo'ladigan, kun davomida beixtiyor seni eslaydigan bo'lib qolganimni sezdim.</p>
-                                <p>Senga aytmoqchi bo'lgan gaplarim juda ko'p. Lekin eng muhimini oddiygina aytaman:</p>
-                                <p><strong style="font-weight:600; font-size:1.2em; color:#3d1428;">Men seni yaxshi ko'raman.</strong></p>
-                                <p>Bu shunchaki chiroyli gap bo'lishi uchun yozilmadi. Bu — anchadan beri ichimda saqlab kelgan hislarim.</p>
-                                <p>Men sendan mukammallik izlamayman. Menga sening o'zingliging yoqadi — kulishing, gapirishing, ba'zan hech narsa demay turishing ham.</p>
-                                <p>Balki bu xatni o'qib, nima deyishni bilmay qolarsan. Hechqisi yo'q. Men sendan hozir javob kutmayman.</p>
-                                <p>Faqat bir narsani bilishingni xohladim:</p>
-                                <p><strong style="font-weight:600; font-size:1.2em; color:#3d1428;">bu dunyoda seni chin dildan o'ylaydigan va sening baxtingni istaydigan bir inson bor.</strong></p>
+                                <p>Senga bir gapni anchadan beri aytmoqchi edim. Lekin qanday boshlashni bilmadim. Oddiygina yozib qo‘ysam, balki bu gapning men uchun qanchalik muhimligini tushuntirib berolmasdim. Shuning uchun o‘zimcha boshqacharoq aytishni xohladim.</p>
+                                <p>Haligi men senga “bir qizni yaxshi ko‘raman” degandim-ku… “3–4 yildan beri aytolmeman”, deb aytgandim. Aslida esa men bu gapni aytayotganimda, o‘sha qizning o‘zi bilan gaplashib turgandim.</p>
+                                <p><strong style="color:#3d1428; font-weight:600;">O‘sha qiz — sensan.</strong></p>
+                                <p>Balki hozir buni o‘qib, “nega boshidanoq aytmagan ekan?” deb o‘ylarsan. Rostini aytsam, aytishga qo‘rqdim. Chunki sening menga bo‘lgan munosabating qandayligini bilmasdim. Men esa bu gapni aytib, seni noqulay ahvolga solib qo‘yishni xohlamadim.</p>
+                                <p>Kecha sen bilan gaplashganimizdan keyin yana bir narsani tushundim: ba’zi insonlar bilan gaplashish oddiy suhbat bo‘lib qolmaydi. Ularning bitta gapi, bitta hazili yoki oddiygina “yaxshi dam oling” degan gapi ham odamning xayolida qolib ketishi mumkin.</p>
+                                <p>Sening gaplaring ham menda shunaqa qolib ketyapti.</p>
+                                <p>Sen “stikerizni chopaman” desam, “maniyam chopmesmi, ish qil” deb hazillashganing ham esimda. Balki sen uchun bu oddiy gapdir. Lekin men uchun shunaqa kichkina narsalar ham yoqimli.</p>
+                                <p>Men seni faqat tashqi ko‘rinishing uchun yaxshi ko‘rmayman. Sen bilan gaplashganimda o‘zimni qanday his qilishim menga ko‘proq yoqadi.</p>
+                                <p>Ba’zan senga yozgim keladi, lekin nima yozishni bilmay qolaman. Ba’zan yozgan xabaringni yana bir marta o‘qib qo‘yaman. Ba’zan esa shunchaki sen bilan gaplashayotganimning o‘zi yetarli bo‘lib qoladi.</p>
+                                <p>Balki bularning hammasini aytishim shart emasdir. Lekin men bu gaplarni ichimda olib yurishni ham xohlamadim.</p>
+                                <p><strong style="font-weight:600; font-size:1.2em; color:#3d1428;">Men seni juda qattiq yaxshi ko‘raman.</strong></p>
+                                <p>Bu gapni shunchaki chiroyli ko‘rinsin deb yozmayapman. Men uchun bu jiddiy gap. Lekin sendan hozir darrov qandaydir javob kutmayman. “Men ham” deyishingni ham majburan xohlamayman.</p>
+                                <p>Agar sening hislaring boshqacha bo‘lsa, buni ham hurmat qilaman. Chunki men seni yaxshi ko‘rganim uchun, sening hislaringni ham hurmat qilishim kerak.</p>
+                                <p>Men shunchaki bir narsani bilishingni xohladim:</p>
+                                <p>Hayotimda bir qiz bor. U bilan gaplashganimda kayfiyatim o‘zgaradi. Uning xabari kelganda telefonimga qaragim keladi. U bilan gaplashgandan keyin suhbat tugagan bo‘lsa ham, gaplari xayolimda qoladi.</p>
+                                <p><strong style="color:#3d1428; font-weight:600;">Va o‘sha qiz — sensan.</strong></p>
+                                <p>Shuning uchun bu oddiy xat emas. Bu men senga o‘zim aytishga jur’at qilolmagan gaplarim. Endi esa sen bilasan.</p>
+                                <p>Men bu xatni yozib bo‘ldim. Qolganini esa vaqt ko‘rsatadi.</p>
+                                <p>Faqat bitta narsani bil: Seni yaxshi ko‘rishim — men uchun uyat yoki yashiradigan narsa emas. Men shunchaki nihoyat senga aytishga jur’at qildim.</p>
                             </div>
                             <div class="letter-bottom">
-                                — Va u inson — men. ❤️
+                              
                             </div>
                             
                             
